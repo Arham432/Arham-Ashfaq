@@ -64,9 +64,9 @@
 
       <sc-for list="{{ deepProjects }}" as="p" hint-placeholder-count="3">
         <div data-reveal style="border: 1px solid oklch(0.32 0.012 250); border-top: 3px solid oklch(0.78 0.13 250); background: oklch(0.195 0.008 250); border-radius: 6px; padding: 0; margin-bottom: 28px; opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; box-shadow: 0 12px 32px -12px oklch(0 0 0 / 0.4);">
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr)); gap: 3px;">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr)); gap: 3px; overflow: hidden; min-width: 0;">
             <sc-for list="{{ p.images }}" as="img" hint-placeholder-count="3">
-              <image-slot id="{{ img.id }}" shape="rect" placeholder="{{ img.label }}" src="{{ img.src }}" fit="{{ img.fit }}" style="width: 100%; height: clamp(130px, 20vw, 200px); background: oklch(0.24 0.01 250);"></image-slot>
+              <image-slot data-fluid="1" id="{{ img.id }}" shape="rect" placeholder="{{ img.label }}" src="{{ img.src }}" fit="{{ img.fit }}" style="width: 100%; max-width: 100%; min-width: 0; height: clamp(130px, 20vw, 200px); background: oklch(0.24 0.01 250);"></image-slot>
             </sc-for>
           </div>
           <div style="padding: clamp(20px, 4vw, 30px) clamp(18px, 4vw, 32px) clamp(22px, 4vw, 32px);">
@@ -111,9 +111,9 @@
                 <li style="margin-bottom: 5px;">{{ b }}</li>
               </sc-for>
             </ul>
-            <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px;">
+            <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; overflow: hidden; min-width: 0;">
               <sc-for list="{{ p.images }}" as="img" hint-placeholder-count="3">
-                <image-slot id="{{ img.id }}" shape="rounded" radius="4" placeholder="{{ img.label }}" src="{{ img.src }}" fit="{{ img.fit }}" style="width: 100%; height: 110px; background: oklch(0.24 0.01 250);"></image-slot>
+                <image-slot data-fluid="1" id="{{ img.id }}" shape="rounded" radius="4" placeholder="{{ img.label }}" src="{{ img.src }}" fit="{{ img.fit }}" style="width: 100%; max-width: 100%; min-width: 0; height: 110px; background: oklch(0.24 0.01 250);"></image-slot>
               </sc-for>
             </div>
           </div>
@@ -125,9 +125,9 @@
       <h2 style="font-family: Georgia, serif; font-size: clamp(22px, 5vw, 26px); font-weight: 400; border-bottom: 1px solid oklch(0.3 0.01 250); padding-bottom: 16px; margin-bottom: 32px;">Experience</h2>
 
       <div data-reveal style="border: 1px solid oklch(0.32 0.012 250); border-top: 3px solid oklch(0.78 0.13 250); background: oklch(0.195 0.008 250); border-radius: 6px; margin-bottom: 32px; opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; box-shadow: 0 12px 32px -12px oklch(0 0 0 / 0.4);">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr)); gap: 3px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr)); gap: 3px; overflow: hidden; min-width: 0;">
           <sc-for list="{{ researchRole.images }}" as="img" hint-placeholder-count="3">
-            <image-slot id="{{ img.id }}" shape="rect" placeholder="{{ img.label }}" src="{{ img.src }}" fit="{{ img.fit }}" style="width: 100%; height: clamp(125px, 19vw, 190px); background: oklch(0.24 0.01 250);"></image-slot>
+            <image-slot data-fluid="1" id="{{ img.id }}" shape="rect" placeholder="{{ img.label }}" src="{{ img.src }}" fit="{{ img.fit }}" style="width: 100%; max-width: 100%; min-width: 0; height: clamp(125px, 19vw, 190px); background: oklch(0.24 0.01 250);"></image-slot>
           </sc-for>
         </div>
         <div style="padding: clamp(20px, 4vw, 30px) clamp(18px, 4vw, 32px) clamp(22px, 4vw, 32px);">
@@ -174,7 +174,7 @@
             </ul>
             <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 14px; max-width: 500px;">
               <sc-for list="{{ job.images }}" as="img" hint-placeholder-count="1">
-                <image-slot id="{{ img.id }}" shape="rounded" radius="4" placeholder="{{ img.label }}" src="{{ img.src }}" fit="{{ img.fit }}" style="width: 100%; height: 110px; background: oklch(0.24 0.01 250);"></image-slot>
+                <image-slot data-fluid="1" id="{{ img.id }}" shape="rounded" radius="4" placeholder="{{ img.label }}" src="{{ img.src }}" fit="{{ img.fit }}" style="width: 100%; max-width: 100%; min-width: 0; height: 110px; background: oklch(0.24 0.01 250);"></image-slot>
               </sc-for>
             </div>
           </div>
