@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<template id="__bundler_thumbnail" data-bg-color="#2b3140">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="600" cy="330" r="120" fill="none" stroke="#9fb8e6" stroke-width="10"/>
+    <path d="M540 330 L660 330 M600 270 L600 390" stroke="#9fb8e6" stroke-width="10"/>
+  </svg>
+</template>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; }
+    a { color: oklch(0.78 0.13 250); text-decoration: none; }
+    a:hover { color: oklch(0.86 0.13 250); text-decoration: underline; }
+    @keyframes heroFadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes tickerScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  </style>
+  <script src="./image-slot.js"></script>
+</helmet>
+<div style="font-family: Helvetica, Arial, sans-serif; background: oklch(0.16 0.006 250); color: oklch(0.92 0.004 250); line-height: 1.55;">
+
+  <image-slot id="cover-photo" shape="rect" src="uploads/pasted-1787240912275-0.png" placeholder="cover photo" fit="cover" style="width: 100%; height: 260px; display: block;"></image-slot>
+
+  <div style="max-width: 1080px; margin: 0 auto; padding: 60px 40px 60px;" ref="{{ setRootRef }}">
+
+    <section style="display: flex; gap: 48px; align-items: center; margin-bottom: 110px;">
+      <div style="flex: 1; min-width: 0;">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: oklch(0.78 0.13 250); margin-bottom: 14px; animation: heroFadeUp 0.7s ease 0.05s both;">Power Electronics Engineer</div>
+        <h1 style="font-family: Georgia, 'Times New Roman', serif; font-size: 52px; margin: 0 0 12px; line-height: 1.1; font-weight: 400; animation: heroFadeUp 0.7s ease both;">Arham Ashfaq</h1>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 14.5px; color: oklch(0.6 0.01 250); margin-bottom: 20px; animation: heroFadeUp 0.7s ease 0.12s both; max-width: 480px; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, black 85%, transparent 100%); mask-image: linear-gradient(90deg, black 85%, transparent 100%);">
+          <div style="display: inline-flex; white-space: nowrap; animation: tickerScroll 18s linear infinite;">
+            <sc-for list="{{ tickerWords }}" as="w" hint-placeholder-count="12">
+              <span style="padding-right: 10px; color: oklch(0.78 0.13 250);">{{ w }}</span><span style="padding-right: 10px; color: oklch(0.4 0.01 250);">/</span>
+            </sc-for>
+          </div>
+        </div>
+        <p style="font-size: 18px; max-width: 520px; color: oklch(0.75 0.008 250); margin: 0 0 28px; animation: heroFadeUp 0.7s ease 0.18s both;">
+          MSc student in Electronics Engineering at SDU, specializing in power electronics.
+          Currently researching GaN switching behavior for motor drives with SDU and Danfoss.
+          Designs, builds, and bench-tests power converters end to end — buck, LLC resonant, flyback, EMC filters — from schematic and PCB layout through hardware validation.
+        </p>
+        <div style="display: flex; flex-wrap: wrap; gap: 14px 28px; font-family: 'JetBrains Mono', monospace; font-size: 13.5px; color: oklch(0.68 0.008 250); margin-bottom: 28px; animation: heroFadeUp 0.7s ease 0.26s both;">
+          <span>Sønderborg, Denmark</span>
+          <span>arhamashfaq04@gmail.com</span>
+          <span>+45 36664494</span>
+          <a href="https://linkedin.com/in/arham-ashfaq" target="_blank">linkedin.com/in/arham-ashfaq</a>
+          <a href="https://github.com/Arham432" target="_blank">github.com/Arham432</a>
+        </div>
+        <a href="#" style="display: inline-block; padding: 12px 26px; background: oklch(0.92 0.004 250); color: oklch(0.16 0.006 250); font-size: 15px; border-radius: 3px; animation: heroFadeUp 0.7s ease 0.34s both;">Download CV</a>
+      </div>
+      <image-slot id="headshot" shape="circle" style="width: 220px; height: 220px; flex-shrink: 0; animation: heroFadeUp 0.8s ease 0.1s both;" placeholder="headshot" src="uploads/Pic.jpg"></image-slot>
+    </section>
+
+    <section style="margin-bottom: 100px;">
+      <h2 style="font-family: Georgia, serif; font-size: 26px; font-weight: 400; border-bottom: 1px solid oklch(0.3 0.01 250); padding-bottom: 16px; margin-bottom: 32px;">Featured Projects</h2>
+
+      <sc-for list="{{ deepProjects }}" as="p" hint-placeholder-count="3">
+        <div data-reveal style="border: 1px solid oklch(0.32 0.012 250); border-top: 3px solid oklch(0.78 0.13 250); background: oklch(0.195 0.008 250); border-radius: 6px; padding: 0; margin-bottom: 28px; opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; box-shadow: 0 12px 32px -12px oklch(0 0 0 / 0.4);">
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px;">
+            <sc-for list="{{ p.images }}" as="img" hint-placeholder-count="3">
+              <image-slot id="{{ img.id }}" shape="rect" placeholder="{{ img.label }}" src="{{ img.src }}" fit="{{ img.fit }}" style="width: 100%; height: 200px; background: oklch(0.24 0.01 250);"></image-slot>
+            </sc-for>
+          </div>
+          <div style="padding: 30px 32px 32px;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: 14px;">
+              <div style="font-size: 23px; font-weight: 700; letter-spacing: -0.01em;">{{ p.title }}</div>
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: oklch(0.6 0.01 250);">{{ p.period }}</div>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px;">
+              <sc-for list="{{ p.specs }}" as="s" hint-placeholder-count="3">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; padding: 5px 12px; border-radius: 20px; background: oklch(0.27 0.03 250); color: oklch(0.82 0.13 250);">{{ s }}</span>
+              </sc-for>
+            </div>
+            <div style="display: grid; gap: 18px; margin-bottom: 4px;">
+              <div>
+                <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; color: oklch(0.78 0.13 250); margin-bottom: 5px;">PROBLEM</div>
+                <div style="font-size: 15.5px; color: oklch(0.88 0.006 250);">{{ p.problem }}</div>
+              </div>
+              <div>
+                <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; color: oklch(0.78 0.13 250); margin-bottom: 5px;">APPROACH</div>
+                <ul style="margin: 0; padding-left: 20px; font-size: 15.5px; color: oklch(0.88 0.006 250);">
+                  <sc-for list="{{ p.approach }}" as="b" hint-placeholder-count="3">
+                    <li style="margin-bottom: 7px;">{{ b }}</li>
+                  </sc-for>
+                </ul>
+              </div>
+              <div>
+                <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; color: oklch(0.78 0.13 250); margin-bottom: 5px;">OUTCOME</div>
+                <div style="font-size: 15.5px; color: oklch(0.82 0.008 250); background: oklch(0.25 0.012 250); border-left: 3px solid oklch(0.78 0.13 250); border-radius: 0 4px 4px 0; padding: 14px 18px;">{{ p.outcome }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 8px;">
+        <sc-for list="{{ compactProjects }}" as="p" hint-placeholder-count="6">
+          <div data-reveal style="border: 1px solid oklch(0.32 0.012 250); border-left: 3px solid oklch(0.78 0.13 250); background: oklch(0.195 0.008 250); border-radius: 4px 6px 6px 4px; padding: 22px 24px; opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease;">
+            <div style="font-size: 16.5px; font-weight: 700; margin-bottom: 4px;">{{ p.title }}</div>
+            <div style="font-size: 13.5px; color: oklch(0.6 0.01 250); margin-bottom: 12px;">{{ p.period }}</div>
+            <ul style="margin: 0 0 14px; padding-left: 18px; font-size: 14.5px; color: oklch(0.8 0.006 250);">
+              <sc-for list="{{ p.bullets }}" as="b" hint-placeholder-count="3">
+                <li style="margin-bottom: 5px;">{{ b }}</li>
+              </sc-for>
+            </ul>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+              <sc-for list="{{ p.images }}" as="img" hint-placeholder-count="3">
+                <image-slot id="{{ img.id }}" shape="rounded" radius="4" placeholder="{{ img.label }}" src="{{ img.src }}" fit="{{ img.fit }}" style="width: 100%; height: 110px; background: oklch(0.24 0.01 250);"></image-slot>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="margin-bottom: 100px;">
+      <h2 style="font-family: Georgia, serif; font-size: 26px; font-weight: 400; border-bottom: 1px solid oklch(0.3 0.01 250); padding-bottom: 16px; margin-bottom: 32px;">Experience</h2>
+
+      <div data-reveal style="border: 1px solid oklch(0.32 0.012 250); border-top: 3px solid oklch(0.78 0.13 250); background: oklch(0.195 0.008 250); border-radius: 6px; margin-bottom: 32px; opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; box-shadow: 0 12px 32px -12px oklch(0 0 0 / 0.4);">
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px;">
+          <sc-for list="{{ researchRole.images }}" as="img" hint-placeholder-count="3">
+            <image-slot id="{{ img.id }}" shape="rect" placeholder="{{ img.label }}" src="{{ img.src }}" fit="{{ img.fit }}" style="width: 100%; height: 190px; background: oklch(0.24 0.01 250);"></image-slot>
+          </sc-for>
+        </div>
+        <div style="padding: 30px 32px 32px;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: 4px;">
+            <div style="font-size: 21px; font-weight: 700;">{{ researchRole.title }}</div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: oklch(0.6 0.01 250);">{{ researchRole.period }}</div>
+          </div>
+          <div style="font-size: 15px; color: oklch(0.78 0.13 250); margin-bottom: 16px;">{{ researchRole.company }}</div>
+          <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 18px;">
+            <sc-for list="{{ researchRole.logos }}" as="lg" hint-placeholder-count="2">
+              <image-slot id="{{ lg.id }}" fit="contain" shape="rect" placeholder="{{ lg.label }}" src="{{ lg.src }}" style="width: 70px; height: 34px; background: white; border-radius: 4px;"></image-slot>
+            </sc-for>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px;">
+            <sc-for list="{{ researchRole.stats }}" as="s" hint-placeholder-count="4">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; padding: 5px 12px; border-radius: 20px; background: oklch(0.27 0.03 250); color: oklch(0.82 0.13 250);">{{ s }}</span>
+            </sc-for>
+          </div>
+          <ul style="margin: 0; padding-left: 20px; font-size: 15.5px; color: oklch(0.85 0.006 250);">
+            <sc-for list="{{ researchRole.bullets }}" as="b" hint-placeholder-count="6">
+              <li style="margin-bottom: 8px;">{{ b }}</li>
+            </sc-for>
+          </ul>
+        </div>
+      </div>
+
+      <sc-for list="{{ experience }}" as="job" hint-placeholder-count="1">
+        <div data-reveal style="display: grid; grid-template-columns: 220px 1fr; gap: 24px; margin-bottom: 40px; opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease;">
+          <div style="color: oklch(0.6 0.01 250); font-size: 14px; padding-top: 3px;">{{ job.period }}</div>
+          <div>
+            <div style="font-size: 18px; font-weight: bold; margin-bottom: 2px;">{{ job.title }}</div>
+            <div style="font-size: 15px; color: oklch(0.78 0.13 250); margin-bottom: 12px;">{{ job.company }}</div>
+            <sc-if value="{{ job.logos }}" hint-placeholder-val="{{ false }}">
+              <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 14px;">
+                <sc-for list="{{ job.logos }}" as="lg" hint-placeholder-count="0">
+                  <image-slot id="{{ lg.id }}" fit="contain" shape="rect" placeholder="{{ lg.label }}" src="{{ lg.src }}" style="width: 70px; height: 34px; background: white; border-radius: 4px;"></image-slot>
+                </sc-for>
+              </div>
+            </sc-if>
+            <ul style="margin: 0; padding-left: 20px; font-size: 15.5px; color: oklch(0.8 0.006 250);">
+              <sc-for list="{{ job.bullets }}" as="b" hint-placeholder-count="3">
+                <li style="margin-bottom: 6px;">{{ b }}</li>
+              </sc-for>
+            </ul>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 14px; max-width: 500px;">
+              <sc-for list="{{ job.images }}" as="img" hint-placeholder-count="1">
+                <image-slot id="{{ img.id }}" shape="rounded" radius="4" placeholder="{{ img.label }}" src="{{ img.src }}" fit="{{ img.fit }}" style="width: 100%; height: 110px; background: oklch(0.24 0.01 250);"></image-slot>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+
+      <div style="margin-top: 8px;">
+        <a href="#" onClick="{{ toggleFullExperience }}" style="font-size: 14px; color: oklch(0.6 0.01 250);">{{ fullExperienceLabel }}</a>
+        <sc-if value="{{ showFullExperience }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top: 20px; padding: 24px; background: oklch(0.19 0.007 250); border: 1px solid oklch(0.3 0.01 250); border-radius: 6px;">
+            <div style="font-size: 13px; color: oklch(0.6 0.01 250); margin-bottom: 14px;">Full detail — Instrument &amp; Control Engineer, Fatima Fertilizer (Jun 2022 – Aug 2024)</div>
+            <ul style="margin: 0; padding-left: 20px; font-size: 14.5px; color: oklch(0.72 0.006 250);">
+              <sc-for list="{{ fatimaFullBullets }}" as="b" hint-placeholder-count="6">
+                <li style="margin-bottom: 7px;">{{ b }}</li>
+              </sc-for>
+            </ul>
+          </div>
+        </sc-if>
+      </div>
+    </section>
+
+    <section style="margin-bottom: 90px;">
+      <h2 style="font-family: Georgia, serif; font-size: 26px; font-weight: 400; border-bottom: 1px solid oklch(0.3 0.01 250); padding-bottom: 16px; margin-bottom: 32px;">Skills &amp; Tools</h2>
+      <div data-reveal style="display: flex; flex-wrap: wrap; align-items: center; gap: 32px; margin-bottom: 36px; padding: 20px 24px; background: white; border-radius: 6px; opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease;">
+        <image-slot id="logo-altium" fit="contain" shape="rect" placeholder="Altium logo" src="uploads/pasted-1787242081807-0.png" style="width: 90px; height: 44px;"></image-slot>
+        <image-slot id="logo-plecs" fit="contain" shape="rect" placeholder="PLECS logo" src="uploads/pasted-1787242106549-0.png" style="width: 90px; height: 44px;"></image-slot>
+        <image-slot id="logo-pspice" fit="contain" shape="rect" placeholder="PSpice logo" src="uploads/pasted-1787242130308-0.png" style="width: 90px; height: 44px;"></image-slot>
+        <image-slot id="logo-matlab" fit="contain" shape="rect" placeholder="MATLAB logo" src="uploads/pasted-1787242222386-0.png" style="width: 90px; height: 44px;"></image-slot>
+        <image-slot id="logo-ltspice" fit="contain" shape="rect" placeholder="LTspice logo" src="uploads/pasted-1787244158842-0.png" style="width: 90px; height: 44px;"></image-slot>
+        <image-slot id="logo-vivado" fit="contain" shape="rect" placeholder="Vivado/Xilinx logo" src="uploads/pasted-1787244177247-0.png" style="width: 90px; height: 44px;"></image-slot>
+        <image-slot id="logo-tektronix" fit="contain" shape="rect" placeholder="Tektronix logo" src="uploads/pasted-1787244845037-0.png" style="width: 90px; height: 44px;"></image-slot>
+      </div>
+      <sc-for list="{{ skillGroups }}" as="g" hint-placeholder-count="6">
+        <div style="margin-bottom: 20px; display: grid; grid-template-columns: 200px 1fr; gap: 16px;">
+          <div style="font-size: 14.5px; font-weight: bold; color: oklch(0.85 0.006 250); padding-top: 2px;">{{ g.category }}</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <sc-for list="{{ g.items }}" as="item" hint-placeholder-count="5">
+              <span style="font-size: 13.5px; padding: 5px 12px; background: oklch(0.24 0.01 250); border-radius: 3px; color: oklch(0.85 0.006 250);">{{ item }}</span>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </section>
+
+    <div data-reveal style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px; margin-bottom: 60px; opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease;">
+      <section>
+        <h2 style="font-family: Georgia, serif; font-size: 20px; font-weight: 400; border-bottom: 1px solid oklch(0.3 0.01 250); padding-bottom: 14px; margin-bottom: 22px;">Education</h2>
+        <sc-for list="{{ education }}" as="e" hint-placeholder-count="2">
+          <div style="margin-bottom: 22px;">
+            <div style="font-size: 14.5px; font-weight: bold;">{{ e.degree }}</div>
+            <div style="font-size: 13.5px; color: oklch(0.78 0.13 250); margin-bottom: 2px;">{{ e.school }}</div>
+            <div style="font-size: 12.5px; color: oklch(0.6 0.01 250); margin-bottom: 6px;">{{ e.period }}</div>
+            <div style="font-size: 13.5px; color: oklch(0.72 0.006 250);">{{ e.detail }}</div>
+          </div>
+        </sc-for>
+      </section>
+
+      <section>
+        <h2 style="font-family: Georgia, serif; font-size: 20px; font-weight: 400; border-bottom: 1px solid oklch(0.3 0.01 250); padding-bottom: 14px; margin-bottom: 22px;">Publications</h2>
+        <sc-for list="{{ publications }}" as="pub" hint-placeholder-count="2">
+          <div style="margin-bottom: 18px;">
+            <div style="font-size: 14px; margin-bottom: 4px; color: oklch(0.85 0.006 250);">{{ pub.title }}</div>
+            <div style="font-size: 12.5px; color: oklch(0.78 0.13 250);">{{ pub.status }}</div>
+          </div>
+        </sc-for>
+      </section>
+
+      <section>
+        <h2 style="font-family: Georgia, serif; font-size: 20px; font-weight: 400; border-bottom: 1px solid oklch(0.3 0.01 250); padding-bottom: 14px; margin-bottom: 22px;">Certifications</h2>
+        <ul style="margin: 0; padding-left: 18px; font-size: 13.5px; color: oklch(0.75 0.006 250);">
+          <sc-for list="{{ certifications }}" as="c" hint-placeholder-count="5">
+            <li style="margin-bottom: 8px;">{{ c }}</li>
+          </sc-for>
+        </ul>
+      </section>
+    </div>
+
+    <footer style="text-align: center; padding: 40px 0 0; border-top: 1px solid oklch(0.3 0.01 250); font-size: 14px; color: oklch(0.6 0.01 250);">
+      Sønderborg, Denmark &middot; arhamashfaq04@gmail.com &middot; +45 36664494 &middot;
+      <a href="https://linkedin.com/in/arham-ashfaq" target="_blank">LinkedIn</a> &middot;
+      <a href="https://github.com/Arham432" target="_blank">GitHub</a>
+    </footer>
+
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { showFullExperience: false };
+  focusWords = ["GaN switching", "Buck converters", "LLC resonant design", "EMC/EMI filtering", "PCB layout", "Double pulse testing"];
+
+  componentDidMount() {
+    this._observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          this._observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+    this._scanReveal();
+  }
+
+  componentDidUpdate() { this._scanReveal(); }
+  componentWillUnmount() {
+    if (this._observer) this._observer.disconnect();
+  }
+
+  _scanReveal() {
+    const root = this._root || document;
+    root.querySelectorAll('[data-reveal]').forEach((el) => {
+      if (!el.dataset.revealBound) {
+        el.dataset.revealBound = '1';
+        this._observer.observe(el);
+      }
+    });
+  }
+
+  renderVals() {
+    return {
+      setRootRef: (el) => { this._root = el; if (this._observer) this._scanReveal(); },
+      tickerWords: [...this.focusWords, ...this.focusWords],
+      showFullExperience: this.state.showFullExperience,
+      fullExperienceLabel: this.state.showFullExperience ? "Hide full fertilizer plant experience ↑" : "Show full fertilizer plant experience (Instrument & Control Engineer, 2022–2024) ↓",
+      toggleFullExperience: (e) => { e.preventDefault(); this.setState(s => ({ showFullExperience: !s.showFullExperience })); },
+      fatimaFullBullets: [
+        "Responsible for E&I assets across a 1700 MTPD Ammonia plant, 1500 MTPD Urea plant, and 200 MTPD Liquid CO2 plant.",
+        "Led a team of 10 technicians, an engineer, and a sub-engineer; designed and sized field instruments to ATEX hazardous-area classification.",
+        "Led upgrading trip/machine protection logic from 1oo1 to 2oo2/2oo3 voting redundancy, removing single points of failure and reducing nuisance tripping.",
+        "Worked daily with Yokogawa Centum VP DCS and ESD systems; trained on Bently Nevada vibration monitoring and GE Mark VI gas turbine control.",
+        "Authorized Permit to Work issuer for electrical and instrumentation work, following a scenario-based exam with the plant safety manager.",
+        "12-month structured Graduate Trainee program across electrical (switchgear, VFDs, protection relays) and instrumentation (flow, level, temperature, HART) before this role.",
+        "Contributed to 2000+ IO loop testing during a 40-day plant turnaround, retrofitting pneumatic instrumentation with HART-based devices.",
+        "Commissioned industrial UPS units and battery chargers, including root-causing a chronic UPS fault and restoring safety-critical power.",
+        "Redesigned a CO2 compressor anti-surge flow transmitter after recurring trips; proposed a conditioning orifice plate through MOC.",
+        "Designed a retrofit for obsolete HP/LP lift valves on a 22 MW ammonia steam turbine after recurring speed-deviation trips.",
+        "Led a ~EUR 80,000 upgrade of ammonia plant trip solenoid valves to 2oo3 voting redundancy, from technical evaluation through purchase order.",
+        "Led shifting 6 plant-critical motors to normal switchgear, revising single-line diagrams and redesigning power/control cabling."
+      ],
+      researchRole: {
+        period: "Oct 2024 – Present",
+        title: "Student Research Assistant",
+        company: "Center for Industrial Electronics, SDU / Danfoss collaboration — Sønderborg, Denmark",
+        stats: ["Project CUHIED", "100+ Double Pulse Tests", "200–800 V, 2–15 A", "30–50 mΩ GaN devices", "800 V DC-link"],
+        bullets: [
+          "Research collaboration between SDU and Danfoss on GaN-based power converter characterization for high-efficiency motor drives.",
+          "Designed the schematic for a GaN Double Pulse Test platform from device datasheets — gate isolators, auxiliary power supplies, slew-rate resistors — and sourced matching Altium libraries and footprints.",
+          "Extracted power-loop parasitic inductance/capacitance from PCB layouts in Ansys Q3D and fed results back into layout optimization to suppress voltage overshoot at ~100 V/ns switching under 800 V DC-link conditions.",
+          "Ran 100+ Double Pulse Tests on 30 mΩ and 50 mΩ GaN devices across 200–800 V and 2–15 A; automated Eon/Eoff extraction and curve fitting in MATLAB.",
+          "Built PLECS thermal loss models from hardware-extracted parameters, correlating simulated switching waveforms against bench measurements.",
+          "Evaluated NPC and flying-capacitor inverter topologies in LTspice and PLECS, comparing GaN vs. Si losses across load and temperature.",
+          "First-author on a submitted conference paper reporting GaN switching-loss characterization on the Flying Capacitor DPT setup; a second paper on snubber optimization is in preparation."
+        ],
+        images: [
+          { id: "cuhied-smd-placement", label: "SMD placement", src: "uploads/pasted-1787244913092-0.png", fit: "cover" },
+          { id: "cuhied-flc-pcb", label: "FLC DPT PCB", src: "uploads/pasted-1787244965484-0.png", fit: "cover" },
+          { id: "cuhied-reflow-oven", label: "reflow oven", src: "uploads/pasted-1787245004629-0.png", fit: "cover" }
+        ],
+        logos: [
+          { id: "logo-sdu", label: "SDU", src: "uploads/pasted-1787242145522-0.png" },
+          { id: "logo-danfoss", label: "Danfoss", src: "uploads/pasted-1787242157607-0.png" }
+        ]
+      },
+      experience: [
+        {
+          period: "Jun 2022 – Aug 2024",
+          title: "Instrument & Control Engineer (prev. Graduate Trainee)",
+          company: "Fatima Fertilizer Company Limited — Sadiqabad, Pakistan",
+          bullets: [
+            "Electrical and instrumentation engineering across a large fertilizer complex: field instrument design, protection logic upgrades, DCS/ESD commissioning.",
+            "Corporate-level role leading a team of 10 technicians; trained technicians and mentored junior engineers on field instrumentation, before moving into power electronics."
+          ],
+          images: [
+            { id: "ups-commissioning", label: "UPS commissioning", src: "uploads/pasted-1787241147670-0.png", fit: "cover" }
+          ]
+        }
+      ],
+      deepProjects: [
+        {
+          title: "110 W Dual-Output Synchronous Buck Converter",
+          period: "Sep 2025 – Jan 2026",
+          specs: ["LTC3891, 24–60 V in", "12 V/5 A validated at full load", "5 V/10 A: stable, not yet at full load", "105 kHz", "93–96% efficiency (12 V rail)"],
+          problem: "Deliver a dual-rail 110 W supply (12 V/5 A + 5 V/10 A) from a 24–60 V input at high efficiency, as team lead on hardware decisions across four build iterations.",
+          approach: [
+            "Full cycle from specification through LTspice simulation, MOSFET/inductor/capacitor selection, and gate-drive and dual-output inductor design, to Altium PCB layout, fabrication, and bench validation.",
+            "Traced the main bottleneck to PCB layout: optimized sense-resistor values, added damping, swapped select SMD parts for through-hole, and tightly controlled high di/dt paths with short power loops and large copper planes.",
+            "Applied EMI/EMC-aware layout practices — hot-loop minimization, Kelvin sensing on current-sense resistors, shielded feedback routing, solid ground planes, optimized gate loops."
+          ],
+          outcome: "The 12 V/5 A rail is fully validated at full load, delivering ~58 W at 93–94% average efficiency (96% peak). The 5 V/10 A rail is stable but does not yet reach full load current — both rails share the same controller and layout approach, so the gap likely traces to low duty-cycle operation, compensation tuning, or current-loop dynamics. Open problem, still being worked.",
+          images: [
+            { id: "buck-hardware", label: "hardware photo", src: "uploads/pasted-1787240348205-0.png", fit: "cover" },
+            { id: "buck-schematic", label: "schematic", src: "uploads/pasted-1787240285526-0.png", fit: "contain" },
+            { id: "buck-efficiency", label: "efficiency chart", src: "uploads/pasted-1787240364741-0.png", fit: "contain" }
+          ]
+        },
+        {
+          title: "Custom LLC Resonant Converter",
+          period: "Feb 2025 – Jun 2025",
+          specs: ["Half-bridge", "12 V output", "120 kHz"],
+          problem: "Build a half-bridge LLC resonant converter with a stable 12 V output, as hardware lead on a team project, controlled by a microcontroller rather than a dedicated LLC controller IC.",
+          approach: [
+            "Set the gain ratio and Q for the resonant tank, derived Lr/Cr, and designed the custom HF transformer and output capacitance.",
+            "Verified the design in LTspice with First Harmonic Approximation analysis before building hardware; laid out the PCB in Altium and hand-assembled it.",
+            "Built closed-loop control on an Arduino, with voltage and current sensing feeding the ADC to vary switching frequency."
+          ],
+          outcome: "Hardware gave a steady 12 V at no load, but voltage dropped under load — an issue in the closed-loop control the team traced but could not fully resolve before the deadline, constrained by component delays and schedule. Documented as an open issue in the final report rather than claimed as resolved.",
+          images: [
+            { id: "llc-hardware", label: "hardware photo", src: "uploads/pasted-1787240705915-0.png", fit: "cover" },
+            { id: "llc-schematic", label: "schematic", src: "uploads/pasted-1787240676422-0.png", fit: "contain" },
+            { id: "llc-layout", label: "PCB layout", src: "uploads/pasted-1787240818267-0.png", fit: "contain" }
+          ]
+        },
+        {
+          title: "EMC Filter — 60 W Modulated-Frequency Boost Converter",
+          period: "Sep – Dec 2025",
+          specs: ["CM/DM input filter", "EN 55011 Class B", "Middlebrook stability analysis"],
+          problem: "Design an EMC filter for a 60 W modulated-frequency boost converter that passes EN 55011 Class B conducted-emission limits without destabilizing the converter.",
+          approach: [
+            "Designed a CM/DM input EMC filter using Middlebrook stability criteria to prevent source-converter oscillation; selected and wound the CM/DM choke cores.",
+            "Verified conducted-emission compliance iteratively with a Rohde & Schwarz EMI receiver, characterizing component impedance on an impedance analyzer along the way."
+          ],
+          outcome: "First build failed the Class B conducted-emission limit. Traced the gap, redesigned the CM filter to a 47pF capacitor, and re-tested to a pass at full load.",
+          images: [
+            { id: "emc-hardware", label: "filter hardware", src: "uploads/pasted-1787240979848-0.png", fit: "cover" },
+            { id: "emc-fail", label: "failed EMI scan", src: "uploads/pasted-1787240994435-0.png", fit: "contain" },
+            { id: "emc-pass", label: "passed EMI scan", src: "uploads/pasted-1787241007795-0.png", fit: "contain" }
+          ]
+        }
+      ],
+      compactProjects: [
+        {
+          title: "200 W Current-Mode Flyback Converter",
+          period: "Sep 2024 – Jan 2025",
+          bullets: [
+            "Custom HF transformer, RCD snubber, Type-II compensation (LT1241), 100 kHz.",
+            "Verified phase/gain margins via LTspice AC loop analysis; laid out the PCB in KiCad.",
+            "Characterized efficiency, switching stress, and thermal performance on the bench."
+          ],
+          images: []
+        },
+        {
+          title: "FPGA Hardware-Software Co-Design",
+          period: "MSc coursework",
+          bullets: [
+            "Group project on a Xilinx Zynq-7000 SoC: FPGA matrix-transposition accelerator built in Vitis HLS, integrated via Vivado with AXI DMA.",
+            "Wrote PS-side matrix generation and DMA control in C++, cross-compiled via WSL and run from an SD card."
+          ],
+          images: []
+        },
+        {
+          title: "Solar Power Forecasting with LSTM Networks",
+          period: "MSc IoT coursework, individual project",
+          bullets: [
+            "Replicated Nelega et al.'s \"Photovoltaic Power Plant Based on Neural Networks\" (IEEE Access, 2023) to forecast PV plant power output.",
+            "Implemented Recursive and MIMO LSTM architectures — 64 hidden units, 0.3 dropout, Adam optimizer.",
+            "Recursive strategy reached an RMSE of 1065.64 W; MIMO tracked the daily generation curve closely across a 3-hour horizon."
+          ],
+          images: [
+            { id: "lstm-forecast", label: "forecast chart", src: "uploads/pasted-1787241828152-0.png", fit: "contain" },
+            { id: "lstm-error", label: "error distribution", src: "uploads/pasted-1787241839862-0.png", fit: "contain" },
+            { id: "lstm-training", label: "training progress", src: "uploads/pasted-1787241859395-0.png", fit: "contain" }
+          ]
+        },
+        {
+          title: "Open-Source 4-in-1 ESC for Heavy-Lift Drones",
+          period: "Ongoing, 2026 — in research",
+          bullets: [
+            "Architecting a high-efficiency 4-in-1 ESC for 8S–12S heavy-lift platforms: two STSPIN32G4 SiPs plus two STDRIVE101 gate drivers driving all 4 motors from 4 ICs.",
+            "Comparing three 5x6mm MOSFETs for the 24-switch power stage, trading Rds(on), cost, and avalanche headroom.",
+            "Estimated core silicon cost ~390 DKK / $60 per unit for prototyping."
+          ],
+          images: []
+        },
+        {
+          title: "4-Layer Embedded PCB (ATmega, Arduino-Compatible)",
+          period: "Self-directed, 2026",
+          bullets: [
+            "First complete 4-layer PCB for an embedded ATmega board, self-taught alongside the MSc thesis — a step from power electronics into high-density digital routing.",
+            "Used a 4-layer stack-up with top/bottom ground pours, tight decoupling placement, and via/layer transitions for dense digital routing."
+          ],
+          images: [
+            { id: "arduino4l-layout", label: "PCB layout", src: "uploads/pasted-1787241264169-0.png", fit: "contain" },
+            { id: "arduino4l-3d", label: "3D render", src: "uploads/pasted-1787241272837-0.png", fit: "cover" },
+            { id: "arduino4l-schematic", label: "schematic", src: "uploads/pasted-1787241328726-0.png", fit: "contain" }
+          ]
+        }
+      ],
+      skillGroups: [
+        { category: "Power electronics / hardware", items: ["LLC resonant", "Flyback", "Buck/boost", "Half-bridge", "Gate-drive design", "Magnetics design", "Thermal management", "EMC/EMI (CM/DM, Middlebrook)"] },
+        { category: "Simulation", items: ["LTspice", "PLECS", "PSpice", "Ansys Q3D", "MATLAB/Simulink"] },
+        { category: "PCB design", items: ["Altium Designer", "KiCad"] },
+        { category: "Lab & hardware", items: ["Double Pulse Testing", "6 GHz oscilloscopes", "HV differential probes", "Impedance analyzers", "R&S EMI receiver", "800 V DC-link testing"] },
+        { category: "Field instrumentation", items: ["Pressure/temperature/flow/level transmitters", "HART protocol", "Control valve specification"] },
+        { category: "Functional safety", items: ["SIS/SIL logic", "ATEX classification", "2oo3 voting", "FMEA"] },
+        { category: "Process control", items: ["Yokogawa Centum VP DCS/ESD", "GE Mark VI turbine control", "Bently Nevada vibration monitoring"] },
+        { category: "Programming & microcontrollers", items: ["MATLAB", "Python", "C/C++", "Arduino", "TI C2000", "TM4C123G", "Raspberry Pi Pico"] },
+        { category: "FPGA & machine learning", items: ["Xilinx Vivado", "Vitis HLS", "AXI DMA", "LSTM/RNN (MATLAB Deep Learning Toolbox)"] }
+      ],
+      education: [
+        { degree: "MSc, Electronics Engineering", school: "University of Southern Denmark (SDU)", period: "2024 – 2026 (expected)", detail: "Specialization in Power Electronics. Thesis: Double Pulse Test–Based Experimental Analysis of GaN Switching Behavior for High-Performance Motor Drive Design." },
+        { degree: "BSc, Electrical & Electronics Engineering", school: "University of Engineering & Technology (UET), Lahore", period: "2018 – 2022", detail: "GPA 3.43/4.00. Final-year project: Three-Phase Grid-Tied Solar Inverter with Resonant Converter." }
+      ],
+      publications: [
+        { title: "GaN switching loss characterization on a Flying Capacitor converter via Double Pulse Testing", status: "Submitted, under review — first author" },
+        { title: "Snubber optimization for the FLC Double Pulse Test setup", status: "In preparation" }
+      ],
+      certifications: [
+        "Process Hazard Analysis — NEBOSH / GradIOSH / OHSAS 18001 (2023)",
+        "GE Mark VI Gas Turbine Control Training — Fatima Fertilizer (2024)",
+        "McKinsey Forward Program (2022–23)",
+        "Medium Voltage Power Cable & Termination — SoftNitro (2023)",
+        "Permit to Work Authorization — Electrical & Instrumentation, Fatima Fertilizer"
+      ]
+    };
+  }
+}
+
+</script>
+</body>
+</html>
