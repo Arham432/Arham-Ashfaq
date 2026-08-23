@@ -66,7 +66,7 @@
         <div data-reveal style="border: 1px solid oklch(0.32 0.012 250); border-top: 3px solid oklch(0.78 0.13 250); background: oklch(0.195 0.008 250); border-radius: 6px; padding: 0; margin-bottom: 28px; opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; box-shadow: 0 12px 32px -12px oklch(0 0 0 / 0.4);">
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr)); gap: 3px; overflow: hidden; min-width: 0;">
             <sc-for list="{{ p.images }}" as="img" hint-placeholder-count="3">
-              <image-slot data-fluid="1" id="{{ img.id }}" shape="rect" placeholder="{{ img.label }}" src="{{ img.src }}" fit="{{ img.fit }}" style="width: 100%; max-width: 100%; min-width: 0; height: clamp(130px, 20vw, 200px); background: oklch(0.24 0.01 250);"></image-slot>
+              <image-slot data-fluid="1" id="{{ img.id }}" shape="rect" placeholder="{{ img.label }}" src="{{ img.src }}" fit="{{ img.fit }}" style="width: 100%; max-width: 100%; min-width: 0; height: clamp(130px, 20vw, 200px); background: oklch(0.28 0.008 250);"></image-slot>
             </sc-for>
           </div>
           <div style="padding: clamp(20px, 4vw, 30px) clamp(18px, 4vw, 32px) clamp(22px, 4vw, 32px);">
@@ -113,7 +113,7 @@
             </ul>
             <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; overflow: hidden; min-width: 0;">
               <sc-for list="{{ p.images }}" as="img" hint-placeholder-count="3">
-                <image-slot data-fluid="1" id="{{ img.id }}" shape="rounded" radius="4" placeholder="{{ img.label }}" src="{{ img.src }}" fit="{{ img.fit }}" style="width: 100%; max-width: 100%; min-width: 0; height: 110px; background: oklch(0.24 0.01 250);"></image-slot>
+                <image-slot data-fluid="1" id="{{ img.id }}" shape="rounded" radius="4" placeholder="{{ img.label }}" src="{{ img.src }}" fit="{{ img.fit }}" style="width: 100%; max-width: 100%; min-width: 0; height: 110px; background: oklch(0.28 0.008 250);"></image-slot>
               </sc-for>
             </div>
           </div>
@@ -127,7 +127,7 @@
       <div data-reveal style="border: 1px solid oklch(0.32 0.012 250); border-top: 3px solid oklch(0.78 0.13 250); background: oklch(0.195 0.008 250); border-radius: 6px; margin-bottom: 32px; opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; box-shadow: 0 12px 32px -12px oklch(0 0 0 / 0.4);">
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr)); gap: 3px; overflow: hidden; min-width: 0;">
           <sc-for list="{{ researchRole.images }}" as="img" hint-placeholder-count="3">
-            <image-slot data-fluid="1" id="{{ img.id }}" shape="rect" placeholder="{{ img.label }}" src="{{ img.src }}" fit="{{ img.fit }}" style="width: 100%; max-width: 100%; min-width: 0; height: clamp(125px, 19vw, 190px); background: oklch(0.24 0.01 250);"></image-slot>
+            <image-slot data-fluid="1" id="{{ img.id }}" shape="rect" placeholder="{{ img.label }}" src="{{ img.src }}" fit="{{ img.fit }}" style="width: 100%; max-width: 100%; min-width: 0; height: clamp(125px, 19vw, 190px); background: oklch(0.28 0.008 250);"></image-slot>
           </sc-for>
         </div>
         <div style="padding: clamp(20px, 4vw, 30px) clamp(18px, 4vw, 32px) clamp(22px, 4vw, 32px);">
@@ -174,7 +174,7 @@
             </ul>
             <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 14px; max-width: 500px;">
               <sc-for list="{{ job.images }}" as="img" hint-placeholder-count="1">
-                <image-slot data-fluid="1" id="{{ img.id }}" shape="rounded" radius="4" placeholder="{{ img.label }}" src="{{ img.src }}" fit="{{ img.fit }}" style="width: 100%; max-width: 100%; min-width: 0; height: 110px; background: oklch(0.24 0.01 250);"></image-slot>
+                <image-slot data-fluid="1" id="{{ img.id }}" shape="rounded" radius="4" placeholder="{{ img.label }}" src="{{ img.src }}" fit="{{ img.fit }}" style="width: 100%; max-width: 100%; min-width: 0; height: 110px; background: oklch(0.28 0.008 250);"></image-slot>
               </sc-for>
             </div>
           </div>
@@ -212,7 +212,7 @@
           <div style="flex: 0 0 180px; font-size: 14.5px; font-weight: bold; color: oklch(0.85 0.006 250); padding-top: 2px;">{{ g.category }}</div>
           <div style="flex: 1 1 240px; display: flex; flex-wrap: wrap; gap: 8px;">
             <sc-for list="{{ g.items }}" as="item" hint-placeholder-count="5">
-              <span style="font-size: 13.5px; padding: 5px 12px; background: oklch(0.24 0.01 250); border-radius: 3px; color: oklch(0.85 0.006 250);">{{ item }}</span>
+              <span style="font-size: 13.5px; padding: 5px 12px; background: oklch(0.28 0.008 250); border-radius: 3px; color: oklch(0.85 0.006 250);">{{ item }}</span>
             </sc-for>
           </div>
         </div>
@@ -331,9 +331,9 @@ class Component extends DCLogic {
           "First-author on a submitted conference paper reporting GaN switching-loss characterization on the Flying Capacitor DPT setup; a second paper on snubber optimization is in preparation."
         ],
         images: [
-          { id: "cuhied-smd-placement", label: "SMD placement", src: "uploads/opt/pasted-1787244913092-0.jpg", fit: "cover" },
-          { id: "cuhied-flc-pcb", label: "FLC DPT PCB", src: "uploads/opt/pasted-1787244965484-0.jpg", fit: "cover" },
-          { id: "cuhied-reflow-oven", label: "reflow oven", src: "uploads/opt/pasted-1787245004629-0.jpg", fit: "cover" }
+          { id: "cuhied-smd-placement", label: "SMD placement", src: "uploads/opt/pasted-1787244913092-0.jpg", fit: "contain" },
+          { id: "cuhied-flc-pcb", label: "FLC DPT PCB", src: "uploads/opt/pasted-1787244965484-0.jpg", fit: "contain" },
+          { id: "cuhied-reflow-oven", label: "reflow oven", src: "uploads/opt/pasted-1787245004629-0.jpg", fit: "contain" }
         ],
         logos: [
           { id: "logo-sdu", label: "SDU", src: "uploads/opt/pasted-1787242145522-0.jpg" },
@@ -350,7 +350,7 @@ class Component extends DCLogic {
             "Corporate-level role leading a team of 10 technicians; trained technicians and mentored junior engineers on field instrumentation, before moving into power electronics."
           ],
           images: [
-            { id: "ups-commissioning", label: "UPS commissioning", src: "uploads/opt/pasted-1787241147670-0.jpg", fit: "cover" }
+            { id: "ups-commissioning", label: "UPS commissioning", src: "uploads/opt/pasted-1787241147670-0.jpg", fit: "contain" }
           ]
         }
       ],
@@ -367,7 +367,7 @@ class Component extends DCLogic {
           ],
           outcome: "The 12 V/5 A rail is fully validated at full load, delivering ~58 W at 93–94% average efficiency (96% peak). The 5 V/10 A rail is stable but does not yet reach full load current — both rails share the same controller and layout approach, so the gap likely traces to low duty-cycle operation, compensation tuning, or current-loop dynamics. Open problem, still being worked.",
           images: [
-            { id: "buck-hardware", label: "hardware photo", src: "uploads/opt/pasted-1787240348205-0.jpg", fit: "cover" },
+            { id: "buck-hardware", label: "hardware photo", src: "uploads/opt/pasted-1787240348205-0.jpg", fit: "contain" },
             { id: "buck-schematic", label: "schematic", src: "uploads/opt/pasted-1787240285526-0.jpg", fit: "contain" },
             { id: "buck-efficiency", label: "efficiency chart", src: "uploads/opt/pasted-1787240364741-0.jpg", fit: "contain" }
           ]
@@ -384,7 +384,7 @@ class Component extends DCLogic {
           ],
           outcome: "Hardware gave a steady 12 V at no load, but voltage dropped under load — an issue in the closed-loop control the team traced but could not fully resolve before the deadline, constrained by component delays and schedule. Documented as an open issue in the final report rather than claimed as resolved.",
           images: [
-            { id: "llc-hardware", label: "hardware photo", src: "uploads/opt/pasted-1787240705915-0.jpg", fit: "cover" },
+            { id: "llc-hardware", label: "hardware photo", src: "uploads/opt/pasted-1787240705915-0.jpg", fit: "contain" },
             { id: "llc-schematic", label: "schematic", src: "uploads/opt/pasted-1787240676422-0.jpg", fit: "contain" },
             { id: "llc-layout", label: "PCB layout", src: "uploads/opt/pasted-1787240818267-0.jpg", fit: "contain" }
           ]
@@ -400,7 +400,7 @@ class Component extends DCLogic {
           ],
           outcome: "First build failed the Class B conducted-emission limit. Traced the gap, redesigned the CM filter to a 47pF capacitor, and re-tested to a pass at full load.",
           images: [
-            { id: "emc-hardware", label: "filter hardware", src: "uploads/opt/pasted-1787240979848-0.jpg", fit: "cover" },
+            { id: "emc-hardware", label: "filter hardware", src: "uploads/opt/pasted-1787240979848-0.jpg", fit: "contain" },
             { id: "emc-fail", label: "failed EMI scan", src: "uploads/opt/pasted-1787240994435-0.jpg", fit: "contain" },
             { id: "emc-pass", label: "passed EMI scan", src: "uploads/opt/pasted-1787241007795-0.jpg", fit: "contain" }
           ]
@@ -459,7 +459,7 @@ class Component extends DCLogic {
           ],
           images: [
             { id: "arduino4l-layout", label: "PCB layout", src: "uploads/opt/pasted-1787241264169-0.jpg", fit: "contain" },
-            { id: "arduino4l-3d", label: "3D render", src: "uploads/opt/pasted-1787241272837-0.jpg", fit: "cover" },
+            { id: "arduino4l-3d", label: "3D render", src: "uploads/opt/pasted-1787241272837-0.jpg", fit: "contain" },
             { id: "arduino4l-schematic", label: "schematic", src: "uploads/opt/pasted-1787241328726-0.jpg", fit: "contain" }
           ]
         }
